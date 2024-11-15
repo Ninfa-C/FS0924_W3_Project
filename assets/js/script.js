@@ -555,7 +555,7 @@ myList.appendChild(newLi);
 /* ESERCIZIO 25
   Scrivi una funzione per svuotare la lista non ordinata con id "myList".
 */
-console.log("<------- ESERCIZIO 25 ------->");
+console.log("<------- ESERCIZIO 25 RESET ------->");
 
 function resetList() {
   myList.innerHTML = "";
