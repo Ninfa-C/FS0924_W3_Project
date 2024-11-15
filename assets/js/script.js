@@ -607,6 +607,8 @@ halfTree(3);
   *****
 
 */
+
+console.log("<------- ESERCIZIO 28 ------->");
 function tree(nHeight) {
   for (let i = 1; i <= nHeight; i++) {
     let spazi = " ".repeat(nHeight - i); // questo per centrare gli asterischi
@@ -620,7 +622,7 @@ tree(3);
   Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e 
   ritorna true se il numero fornito è un numero primo.
 */
-
+console.log("<------- ESERCIZIO 29 ------->");
 function isItPrime(n) {
     
   //numero primo disibile solo per uno e se stesso quindi se lo divido per ogni numero compreso tra 2 e il numero precedente e trovo un divisore il cui resto fa 0 non è un numero primo
