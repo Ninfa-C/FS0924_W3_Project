@@ -592,11 +592,11 @@ console.log("<------- ESERCIZIO 27 ------->");
 
 function halfTree(nHeight) {
   for (let i = 1; i <= nHeight; i++) {
-    console.log('*'.repeat(i))
+    console.log("*".repeat(i));
   }
 }
 
-halfTree(3)
+halfTree(3);
 
 /* ESERCIZIO 28
   Crea una funzione chiamata "tree" che riceve un numero come parametro e costruisce un albero di "*" (asterischi) dell'altezza fornita.
@@ -610,21 +610,28 @@ halfTree(3)
 
 */
 function tree(nHeight) {
-    for (let i = 1; i <= nHeight; i++) {
-        let spazi = ' '.repeat(nHeight-i);
-        let asterischi = '*'.repeat(2 * i - 1)
-        
-        console.log(spazi+asterischi)
-    }
+  for (let i = 1; i <= nHeight; i++) {
+    let spazi = " ".repeat(nHeight - i); // questo per centrare gli asterischi
+    let asterischi = "*".repeat(2 * i - 1); // ad ogni riga bisogna raddoppiare il valore di i e diminuirlo di 1
+    console.log(spazi + asterischi);
   }
-  
-  tree(3)
+}
+
+tree(3);
 /* ESERCIZIO 29
   Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e 
   ritorna true se il numero fornito è un numero primo.
 */
 
-function isItPrime (){
-    
+function isItPrime(n) {
+  //numero primo disibile solo per uno e se stesso quindi se lo divido per ogni numero compreso tra 2 e il numero precedente e trovo un divisore il cui resto fa 0 non è un numero primo
+  for (i = 2; i < n; i++) {
+    if (n % i === 0) {
+      return false;
+    }
+  }
+  return true;
 }
+
+console.log (isItPrime(97));
 /* Questo array viene usato per gli esercizi. Non modificarlo. */
