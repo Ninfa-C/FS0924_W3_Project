@@ -518,30 +518,73 @@ console.log("<------- ESERCIZIO 21 ------->");
 
 const td = document.getElementsByTagName('td')
 
-console.log (td) //html collection
+console.log (td) //html collection ma si comporta come un array
 
 
 /* ESERCIZIO 22
-  Scrivi una funzione che, tramite un ciclo, stampa in console il testo contenuto in ogni tag <td> all'interno della pagina.
+  Scrivi una funzione che, tramite un ciclo, stampa in console il testo contenuto in ogni tag <td> 
+  all'interno della pagina.
 */
 console.log("<------- ESERCIZIO 22 ------->");
+
+function printConsole (){
+    for (let i=0; i<td.length;i++){
+        console.log (td[i].innerText)
+    }
+}
+printConsole()
 
 /* ESERCIZIO 23
   Scrivi una funzione per aggiungere un background di colore rosso a ogni link all'interno della pagina.
 */
-console.log("<------- ESERCIZIO 23 ------->");
+console.log("<------- ESERCIZIO 23  link in red ------->");
+
+function red (){
+const link = document.querySelectorAll('a')
+link.forEach((element)=>
+    element.style.backgroundColor= 'red'
+)
+return
+}
+
+red()
+
+
+
 /* ESERCIZIO 24
   Scrivi una funzione per aggiungere un nuovo elemento alla lista non ordinata con id "myList".
 */
-console.log("<------- ESERCIZIO 24 ------->");
+console.log("<------- ESERCIZIO 24  elemento lista ------->");
+
+const myList = document.getElementById('myList')
+const newLi = document.createElement('li')
+newLi.innerText = 'primo elemento nella lista'
+myList.appendChild(newLi)
+
+
 /* ESERCIZIO 25
   Scrivi una funzione per svuotare la lista non ordinata con id "myList".
 */
 console.log("<------- ESERCIZIO 25 ------->");
+
+function resetList(){
+    myList.innerHTML = "";
+}
+
+//resetList()
+
+
 /* ESERCIZIO 26
   Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
 */
 console.log("<------- ESERCIZIO 26 ------->");
+
+const tr = document.querySelectorAll('tr')
+tr.forEach((element)=>
+    element.classList.add ('test')
+)
+
+
 // [EXTRA] JS Avanzato
 
 /* ESERCIZIO 27
@@ -555,6 +598,9 @@ console.log("<------- ESERCIZIO 26 ------->");
   ***
 
 */
+
+console.log("<------- ESERCIZIO 27 ------->");
+
 
 /* ESERCIZIO 28
   Crea una funzione chiamata "tree" che riceve un numero come parametro e costruisce un albero di "*" (asterischi) dell'altezza fornita.
