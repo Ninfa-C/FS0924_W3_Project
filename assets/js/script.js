@@ -402,6 +402,8 @@ console.log(recent());
   Scrivi una funzione chiamata countMovies che ritorna il numero di film contenuti nell'array "movies" fornito.
 */
 console.log("<------- ESERCIZIO 13 ------->");
+
+
 function countMovies(array) {
   return array.length;
 }
@@ -467,9 +469,10 @@ console.log(searchByTitle("lord"));
 */
 console.log("<------- ESERCIZIO 18 ------->");
 
-function searchAndDivide(str) {
-  const match = [];
-  const unmatch = [];
+function searchAndDivide(str) { //Mii sono accorta alle 17:13 che non ho creato l'oggetto ma solo i due array
+
+    const object = {match:[], unmatch:[]}
+ 
   let x = movies.filter((element) =>
     element.Title.toLowerCase().includes(str.toLowerCase())
   );
@@ -477,12 +480,12 @@ function searchAndDivide(str) {
     (element) => !element.Title.toLowerCase().includes(str.toLowerCase())
   );
   if (x.length > 0) {
-    match.push(...x);
-    unmatch.push(...y);
+    object.match.push(...x);
+    object.unmatch.push(...y);
   } else {
-    unmatch = [...movies];
+    object.unmatch = [...movies];
   }
-  return { match, unmatch };
+  return object;
 }
 console.log(searchAndDivide("lord"));
 /* ESERCIZIO 19
