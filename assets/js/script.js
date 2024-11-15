@@ -386,7 +386,7 @@ console.log("<------- ESERCIZIO 12 ------->");
 
 const newMovies = [...movies];
 console.log(newMovies);
-console.log (movies)
+console.log(movies);
 
 function recent() {
   let newestMovie = { ...newMovies[0] };
@@ -429,11 +429,10 @@ console.log(onlyTheYears(movies));
 console.log("<------- ESERCIZIO 15 ------->");
 
 function onlyInLastMillennium(array) {
-    return array.filter(element => Number(element.Year) < 2001);
+  return array.filter((element) => Number(element.Year) < 2001);
 }
 
 console.log(onlyInLastMillennium(newMovies));
-
 
 /* ESERCIZIO 16
   Scrivi una funzione chiamata "sumAllTheYears" che ritorna la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array "movies" fornito.
@@ -441,15 +440,14 @@ console.log(onlyInLastMillennium(newMovies));
 console.log("<------- ESERCIZIO 16 ------->");
 
 function sumAllTheYears(array) {
-    let sum = 0;
-    array.forEach(element => {
-      sum += parseInt(element.Year);
-    });
-    return sum;
-  }
+  let sum = 0;
+  array.forEach((element) => {
+    sum += parseInt(element.Year);
+  });
+  return sum;
+}
 
-  console.log (sumAllTheYears(newMovies))
-
+console.log(sumAllTheYears(newMovies));
 
 /* ESERCIZIO 17
   Scrivi una funzione chiamata "searchByTitle" che riceve una stringa come parametro e 
@@ -457,13 +455,13 @@ function sumAllTheYears(array) {
 */
 console.log("<------- ESERCIZIO 17 ------->");
 
-function searchByTitle (str){
-   return movies.filter(element =>
-        element.Title.toLowerCase().includes(str.toLowerCase())  //mi ha fatto impazzire perchè se scritto in minuscolo non riconosceva la stringa
-    )
+function searchByTitle(str) {
+  return movies.filter(
+    (element) => element.Title.toLowerCase().includes(str.toLowerCase()) //mi ha fatto impazzire perchè se scritto in minuscolo non riconosceva la stringa
+  );
 }
 
-console.log (searchByTitle('lord'))
+console.log(searchByTitle("lord"));
 
 /* ESERCIZIO 18
   Scrivi una funzione chiamata "searchAndDivide" che riceve una stringa come parametro e ritorna un oggetto contenente due array: "match" e "unmatch".
@@ -471,36 +469,36 @@ console.log (searchByTitle('lord'))
 */
 console.log("<------- ESERCIZIO 18 ------->");
 
-function searchAndDivide (str){
-    const match = []
-    const unmatch = []
-    let x = movies.filter(element =>
-         element.Title.toLowerCase().includes(str.toLowerCase())
-     )
-     let y = movies.filter(element =>
-        !element.Title.toLowerCase().includes(str.toLowerCase())
-    )
-     if (x.length>0) {
-         match.push(...x);
-         unmatch.push ( ...y)
-     } else {
-        unmatch = [...movies]
-     }
-     return {match, unmatch}
- }
- console.log (searchAndDivide('lord'))
+function searchAndDivide(str) {
+  const match = [];
+  const unmatch = [];
+  let x = movies.filter((element) =>
+    element.Title.toLowerCase().includes(str.toLowerCase())
+  );
+  let y = movies.filter(
+    (element) => !element.Title.toLowerCase().includes(str.toLowerCase())
+  );
+  if (x.length > 0) {
+    match.push(...x);
+    unmatch.push(...y);
+  } else {
+    unmatch = [...movies];
+  }
+  return { match, unmatch };
+}
+console.log(searchAndDivide("lord"));
 /* ESERCIZIO 19
   Scrivi una funzione chiamata "removeIndex" che riceve un numero come parametro e ritorna l'array "movies" fornito privo dell'elemento nella posizione ricevuta come parametro.
 */
 console.log("<------- ESERCIZIO 19 ------->");
 
-function removeIndex(n){
-    let arrayIndex = [... newMovies.splice (n,1)]
-    return arrayIndex
+function removeIndex(n) {
+  let arrayIndex = [...newMovies.splice(n, 1)];
+  return arrayIndex;
 }
 
-console.log (removeIndex(2))
-console.log (newMovies)
+console.log(removeIndex(2));
+console.log(newMovies);
 
 // DOM (nota: gli elementi che selezionerai non si trovano realmente nella pagina)
 
@@ -508,18 +506,17 @@ console.log (newMovies)
   Scrivi una funzione per selezionare l'elemento dotato di id "container" all'interno della pagina.
 */
 console.log("<------- ESERCIZIO 20 ------->");
-const container = document.getElementById('container')
-console.log (container)
+const container = document.getElementById("container");
+console.log(container);
 
 /* ESERCIZIO 21
   Scrivi una funzione per selezionare ogni tag <td> all'interno della pagina.
 */
 console.log("<------- ESERCIZIO 21 ------->");
 
-const td = document.getElementsByTagName('td')
+const td = document.getElementsByTagName("td");
 
-console.log (td) //html collection ma si comporta come un array
-
+console.log(td); //html collection ma si comporta come un array
 
 /* ESERCIZIO 22
   Scrivi una funzione che, tramite un ciclo, stampa in console il testo contenuto in ogni tag <td> 
@@ -527,68 +524,60 @@ console.log (td) //html collection ma si comporta come un array
 */
 console.log("<------- ESERCIZIO 22 ------->");
 
-function printConsole (){
-    for (let i=0; i<td.length;i++){
-        console.log (td[i].innerText)
-    }
+function printConsole() {
+  for (let i = 0; i < td.length; i++) {
+    console.log(td[i].innerText);
+  }
 }
-printConsole()
+printConsole();
 
 /* ESERCIZIO 23
   Scrivi una funzione per aggiungere un background di colore rosso a ogni link all'interno della pagina.
 */
 console.log("<------- ESERCIZIO 23  link in red ------->");
 
-function red (){
-const link = document.querySelectorAll('a')
-link.forEach((element)=>
-    element.style.backgroundColor= 'red'
-)
-return
+function red() {
+  const link = document.querySelectorAll("a");
+  link.forEach((element) => (element.style.backgroundColor = "red"));
+  return;
 }
 
-red()
-
-
+red();
 
 /* ESERCIZIO 24
   Scrivi una funzione per aggiungere un nuovo elemento alla lista non ordinata con id "myList".
 */
 console.log("<------- ESERCIZIO 24  elemento lista ------->");
 
-const myList = document.getElementById('myList')
-const newLi = document.createElement('li')
-newLi.innerText = 'primo elemento nella lista'
-myList.appendChild(newLi)
-
+const myList = document.getElementById("myList");
+const newLi = document.createElement("li");
+newLi.innerText = "primo elemento nella lista";
+myList.appendChild(newLi);
 
 /* ESERCIZIO 25
   Scrivi una funzione per svuotare la lista non ordinata con id "myList".
 */
 console.log("<------- ESERCIZIO 25 ------->");
 
-function resetList(){
-    myList.innerHTML = "";
+function resetList() {
+  myList.innerHTML = "";
 }
 
 //resetList()
-
 
 /* ESERCIZIO 26
   Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
 */
 console.log("<------- ESERCIZIO 26 ------->");
 
-const tr = document.querySelectorAll('tr')
-tr.forEach((element)=>
-    element.classList.add ('test')
-)
-
+const tr = document.querySelectorAll("tr");
+tr.forEach((element) => element.classList.add("test"));
 
 // [EXTRA] JS Avanzato
 
 /* ESERCIZIO 27
-  Crea una funzione chiamata "halfTree" che riceve un numero come parametro e costruisce un mezzo albero di "*" (asterischi) dell'altezza fornita.
+  Crea una funzione chiamata "halfTree" che riceve un numero come parametro e costruisce un mezzo albero di "*" 
+  (asterischi) dell'altezza fornita.
 
   Esempio:
   halfTree(3)
@@ -601,6 +590,13 @@ tr.forEach((element)=>
 
 console.log("<------- ESERCIZIO 27 ------->");
 
+function halfTree(nHeight) {
+  for (let i = 1; i <= nHeight; i++) {
+    console.log('*'.repeat(i))
+  }
+}
+
+halfTree(3)
 
 /* ESERCIZIO 28
   Crea una funzione chiamata "tree" che riceve un numero come parametro e costruisce un albero di "*" (asterischi) dell'altezza fornita.
@@ -613,9 +609,22 @@ console.log("<------- ESERCIZIO 27 ------->");
   *****
 
 */
-
+function tree(nHeight) {
+    for (let i = 1; i <= nHeight; i++) {
+        let spazi = ' '.repeat(nHeight-i);
+        let asterischi = '*'.repeat(2 * i - 1)
+        
+        console.log(spazi+asterischi)
+    }
+  }
+  
+  tree(3)
 /* ESERCIZIO 29
-  Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
+  Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e 
+  ritorna true se il numero fornito è un numero primo.
 */
 
+function isItPrime (){
+    
+}
 /* Questo array viene usato per gli esercizi. Non modificarlo. */
