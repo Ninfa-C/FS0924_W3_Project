@@ -385,8 +385,6 @@ console.log(newMe);
 console.log("<------- ESERCIZIO 12 ------->");
 
 const newMovies = [...movies];
-console.log(newMovies);
-console.log(movies);
 
 function recent() {
   let newestMovie = { ...newMovies[0] };
@@ -624,6 +622,7 @@ tree(3);
 */
 
 function isItPrime(n) {
+    
   //numero primo disibile solo per uno e se stesso quindi se lo divido per ogni numero compreso tra 2 e il numero precedente e trovo un divisore il cui resto fa 0 non è un numero primo
   for (i = 2; i < n; i++) {
     if (n % i === 0) {
